@@ -4,7 +4,7 @@
 
 
 
-answer = ...
+answer = 14
 
 #
 
