@@ -33,7 +33,7 @@ turtle.exitonclick()
 
 
 
-answer = 12
+answer = 189
 
 #
 
