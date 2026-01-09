@@ -1,7 +1,9 @@
 import hashlib
 import os
+import time
 import sqlite3
 import subprocess
+import threading
 from collections import defaultdict
 from datetime import datetime
 
@@ -68,6 +70,35 @@ def git_commit(message="Автоматическое обновление ста
             return False, f"Ошибка при создании коммита: {result.stderr}"
     except Exception as e:
         return False, f"Исключение при работе с Git: {str(e)}"
+
+
+def rename_when_closed(src, dst, callback=None):
+    """
+    Пытается переименовать файл в отдельном потоке. 
+    Если он занят, ждет 5 секунд и пробует снова, пока не освободится.
+    """
+    def _worker():
+        while True:
+            try:
+                if os.path.exists(dst):
+                    # Если целевой файл существует, удаляем его, чтобы rename сработал (как replace)
+                    try:
+                        os.remove(dst)
+                    except OSError:
+                        pass # Если не удалось удалить, возможно он тоже занят
+                
+                os.rename(src, dst)
+                # print(f"Успешно переименовано: {src} -> {dst}")
+                if callback:
+                    callback()
+                return
+                
+            except OSError: 
+                # Файл занят. Ждем 5 секунд перед следующей попыткой
+                time.sleep(5)
+
+    thread = threading.Thread(target=_worker, daemon=True)
+    thread.start()
 
 
 def db_path():
@@ -438,7 +469,9 @@ def result_register(task_type, number, result, right_result):
             return []
 
         # Список поддерживаемых расширений файлов
-        extensions = ['.md', '.png', '.py', '.jpg', '.ods', '.xlsx']
+        extensions = ['.md', '.png', '.py', '.jpg', '.ods', '.xlsx', '.odt', '.docx', '.doc', '.xls', '.csv', '.txt']
+        # Список найденных файлов
+        files = []
         sign = '+' if is_correct else '-'
         renamed = []
 
@@ -461,12 +494,17 @@ def result_register(task_type, number, result, right_result):
 
             dst = os.path.join(task_dir, sign + base_name)
             try:
+                def on_rename_success():
+                    success, message = git_add_file(dst)
+                    if not success:
+                        print(f"Предупреждение при добавлении файла в Git: {message}")
+
                 if os.path.abspath(src) != os.path.abspath(dst):
-                    os.replace(src, dst)  # перезаписываем, если существует файл с другим префиксом
+                    rename_when_closed(src, dst, callback=on_rename_success)
+                else:
+                    on_rename_success()
+                    
                 renamed.append(dst)
-                success, message = git_add_file(dst)
-                if not success:
-                    print(f"Предупреждение при добавлении файла в Git: {message}")
 
             except Exception as e:
                 print(f"Ошибка при переименовании файла: {str(e)}")
