@@ -146,4 +146,5 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-/tests/conftest-copy.py
+# Office temporary files
+~$*
