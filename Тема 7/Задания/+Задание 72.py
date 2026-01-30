@@ -6,7 +6,7 @@
 
 
 
-answer = 400
+answer = 80
 
 #
 
