@@ -13,6 +13,7 @@ for a in range(400):
         for y in range(400):
             if not ((x + 2 * y < a) or (y > x) or (x > 60)):
                 f = False
+                break
     if f:
         print(a)
         break
