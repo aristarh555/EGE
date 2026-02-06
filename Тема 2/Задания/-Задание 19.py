@@ -12,10 +12,4 @@ for x in range(0, 2):
 
 
 
-answer = 'xzyuw'
-
-#
-
-from tests.conftest import result_register
-if answer is not Ellipsis:
-    print(result_register(2, 19, answer, 'b83215ff76ddd410e32571919b78d0eb'))
+answer = 'wzyxu'
