@@ -7,7 +7,7 @@ for mask in range(32, 0, -1):
     net2 = ip_network(f'157.220.184.230/{mask}', False)
     if net1.network_address == net2.network_address:
         for ip in net1:
-            if f'{ip:b}'.count('1') == 15: # if str(int(ip)).count('1') == 15:
+            if f'{ip:b}'.count('1') == 15:
                 count += 1
         break
 
