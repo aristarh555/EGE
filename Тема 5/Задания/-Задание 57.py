@@ -1,15 +1,27 @@
 # Решение
 for n in range(10000000):
     bn = bin(n)[2:]
-    if str(bn).count('1') % 2 == 0:
+    l = list(str(n))
+    s = 0
+    for j in range(len(l)):
+        s += int(l[j])
+    if s % 2 == 0:
         bn = str(bn) + '0'
     else:
         bn = str(bn) + '1'
-    if str(bn).count('1') % 2 == 0:
+    l = list(str(bn))
+    s = 0
+    for j in range(len(l)):
+        s += int(l[j])
+    if s % 2 == 0:
         bn = str(bn) + '0'
     else:
         bn = str(bn) + '1'
-    if str(bn).count('1') % 2 == 0:
+    l = list(str(bn))
+    s = 0
+    for j in range(len(l)):
+        s += int(l[j])
+    if s % 2 == 0:
         bn = str(bn) + '0'
     else:
         bn = str(bn) + '1'
