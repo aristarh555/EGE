@@ -1,4 +1,3 @@
-
 from turtle import *
 tracer(0)
 koef = 20
