@@ -1,7 +1,7 @@
 # Решение
 for a in range(100000):
     for x in range(100000):
-        if not(((x & 5160 > 0) or (x & 3650 > 0) <= ((x & 9545 == 0) <= (x & a > 0)))):
+        if not(((x & 5160 > 0) or (x & 3650 > 0)) <= ((x & 9545 == 0) <= (x & a > 0))):
             break
     else:
         print(a)
