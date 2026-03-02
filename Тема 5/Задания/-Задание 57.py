@@ -1,5 +1,6 @@
 # Решение
 for n in range(10000000):
+    n = 17
     bn = bin(n)[2:]
     l = list(str(n))
     s = 0
@@ -26,9 +27,8 @@ for n in range(10000000):
     else:
         bn = str(bn) + '1'
     r = int(bn, 2)
-    if r > 1028:
-        print(r)
-        break
+    print(r)
+    break
 
 
 
@@ -38,7 +38,7 @@ for n in range(10000000):
 
 
 
-answer = 1032
+answer = ...
 
 #
 
