@@ -6,8 +6,8 @@
 
 
 
-answer1 = 375
-answer2 = 1650
+answer1 = ...
+answer2 = ...
 
 #
 
