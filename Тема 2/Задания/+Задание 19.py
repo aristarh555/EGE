@@ -2,7 +2,7 @@
 
 
 
-answer = ...
+answer = 'wzyxu'
 
 from tests.conftest import result_register
 if answer is not Ellipsis:
