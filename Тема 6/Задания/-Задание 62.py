@@ -1,6 +1,6 @@
 # Решение
 from turtle import *
-k=10
+k=15
 screensize(10000, 10000)
 tracer(0)
 rt(180)
@@ -31,7 +31,7 @@ exitonclick()
 
 
 
-answer = 118
+answer = 130
 
 #
 
