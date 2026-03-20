@@ -21,7 +21,7 @@ n = 700001
 count = 0
 while count < 5:
     divs = get_divs(n)
-    m = divs[0] + divs[-1] if len(divs) > 1 else 0
+    m = divs[0] + divs[-1] if len(divs) > 0 else 0
     if m % 10 == 8:
         print(n, m)
         count += 1
