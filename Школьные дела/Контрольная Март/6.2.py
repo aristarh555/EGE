@@ -1,0 +1,19 @@
+import sys
+
+sys.setrecursionlimit(10**6)
+
+def g(n):
+    if n >= 248045:
+        return n / 20 + 28
+    else:
+        return g(n + 9) - 4
+
+
+def f(n):
+    if n >= 19:
+        return f(n - 4) + 3580
+    else:
+        return 6 * (g(n - 7) - 36)
+
+
+print(f(673))
