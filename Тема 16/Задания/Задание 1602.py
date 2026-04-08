@@ -8,11 +8,9 @@ def f(n):
     elif n % 2 == 0 and n > 0:
         return f(n/2)
 c = 0
-n = 0
-while n < 1000000000:
+for n in range(0, 1000000000):
     if f(n) == 2:
         c += 1
-    n+=1
 print(c)
 
 
