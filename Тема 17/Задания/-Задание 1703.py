@@ -6,13 +6,13 @@ min_x = 100000
 for y in range(len(a)):
     a[y] = int(a[y])
 for x in range(len(a)):
-    if (a[x] % 100) // 10 == a[x] % 10:
+    if (abs(a[x]) % 100) // 10 == abs(a[x]) % 10:
         min_x = a[x]
 c = 0
 maxx = -100000
 for i in range(len(a)-1):
     flag = 0
-    if a[i] % 10 == (a[i+1]%100) // 10 or a[i+1] % 10 == a[i] % 100 // 10:
+    if a[i] % 10 == (a[i+1]%100) // 10 or a[i+1] % 10 == (a[i] % 100) // 10:
         flag += 1
     if (a[i] % 13 == 0 and a[i+1] % 13 != 0) or (a[i+1] % 13 == 0 and a[i] % 13 != 0):
         flag += 1
@@ -32,8 +32,8 @@ print(c, maxx)
 
 
 
-answer1 = 75
-answer2 = 62945424
+answer1 = 28
+answer2 = 24221458
 
 #
 
