@@ -7,7 +7,7 @@
 
 
 answer1 = 391
-answer2 = 1253
+answer2 = 2494
 
 #
 
