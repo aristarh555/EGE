@@ -12,16 +12,16 @@ c = 0
 maxx = -100000
 for i in range(len(a)-1):
     flag = 0
-    if (a[i] % 10 == (a[i+1]%100) // 10) != (a[i+1] % 10 == (a[i] % 100) // 10):
+    if (a[i] % 10 == ((a[i+1]%100) // 10)) != (a[i+1] % 10 == ((a[i] % 100) // 10)):
         flag += 1
     if (a[i] % 13 == 0) != (a[i+1] % 13 == 0):
         flag += 1
 
-    if a[i]**2 + a[i+1]**2 <= min_x**2:
+    if (a[i]**2 + a[i+1]**2) < min_x**2:
         flag += 1
     if flag == 3:
         c += 1
-        if a[i]**2 + a[i+1]**2 > maxx:
+        if (a[i]**2 + a[i+1]**2) > maxx:
             maxx = a[i]**2 + a[i+1]**2
 print(c, maxx)
 
