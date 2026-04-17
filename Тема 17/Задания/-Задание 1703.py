@@ -6,7 +6,7 @@ min_x = 100000
 for y in range(len(a)):
     a[y] = int(a[y])
 for x in range(len(a)):
-    if (abs(a[x]) % 100) // 10 == abs(a[x]) % 10 and a[x] < min_x:
+    if (abs(a[x]) % 100) // 10 == abs(a[x]) % 10 and a[x]< min_x:
         min_x = a[x]
 c = 0
 maxx = -100000
@@ -14,10 +14,10 @@ for i in range(len(a)-1):
     flag = 0
     if (abs(a[i]) % 10 == ((abs(a[i+1])%100) // 10)) != (abs(a[i+1]) % 10 == ((abs(a[i]) % 100) // 10)):
         flag += 1
-    if (abs(a[i]) % 13 == 0) != (abs(a[i+1]) % 13 == 0):
+    if (a[i] % 13 == 0) != (a[i+1] % 13 == 0):
         flag += 1
 
-    if (a[i]**2 + a[i+1]**2) < min_x**2:
+    if (a[i]**2 + a[i+1]**2) <= min_x**2:
         flag += 1
     if flag == 3:
         c += 1
