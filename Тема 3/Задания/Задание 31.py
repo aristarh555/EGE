@@ -1,1 +1,1 @@
-answer = 'М36'
+answer = 'М20'
