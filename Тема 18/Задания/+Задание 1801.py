@@ -6,8 +6,8 @@
 
 
 
-answer1 = ...
-answer2 = ...
+answer1 = 32
+answer2 = 312
 
 #
 
