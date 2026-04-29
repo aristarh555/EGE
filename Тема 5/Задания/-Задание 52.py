@@ -1,5 +1,6 @@
 # Решение
 for n in range(2, 1000000):
+    n = 39
     r = bin(n)[2:]
     c = 0
     for i in range(len(r)):
