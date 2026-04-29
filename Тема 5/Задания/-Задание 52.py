@@ -1,13 +1,12 @@
 # Решение
 for n in range(2, 1000000):
-    n = 39
     r = bin(n)[2:]
     c = 0
-    for i in range(len(r)):
+    for i in range(0, len(r)):
         if i % 2 == 0 and r[i] == '1':
             c += 1
     k = 0
-    for j in range(len(r)):
+    for j in range(0, len(r)):
         if j % 2 != 0 and r[j] == '0':
             k += 1
     r = abs(c-k)
@@ -20,7 +19,7 @@ for n in range(2, 1000000):
 
 
 
-answer = 511
+answer = ...
 
 #
 
