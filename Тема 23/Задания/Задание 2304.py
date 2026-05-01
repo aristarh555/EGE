@@ -1,6 +1,18 @@
 # Решение
+def f(x, y, z):
+    if x > y and z == 0:
+        return 0
+    if x > y + 1:
+        return 0
+    if x == y:
+        return 1
+    else:
+        if z == 0:
+            return f(x+3, y, 1) + f(x*2, y, 2)
+        else:
+            return f(x+3, y, 1) + f(x*2, y, 2) + f(x-1, y, 0)
 
-
+print(f(3, 12, -1))
 
 
 
