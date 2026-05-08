@@ -1,4 +1,17 @@
 # Решение
+for n in range(100000, 100000000000):
+    n = 2021
+    sum1 = 0
+    for digit in str(n):
+        if int(digit) % 2 == 0:
+            sum1 += int(digit)
+    sum2 = 0
+    for i in range(1, len(str(n)), 2):
+        sum2 += int(str(n)[i])
+    r = abs(sum1 - sum2)
+    if r == 13:
+        print(n)
+        break
 
 
 
