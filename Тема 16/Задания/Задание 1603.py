@@ -1,4 +1,16 @@
 # Решение
+import sys
+sys.setrecursionlimit(10**8)
+def f(n):
+    if n == 0:
+        return 0
+    else:
+        return f(n // 10) + f(n % 10)
+c = 0
+for n in range(765432015, 1542613239):
+    if f(n) > f(n+1):
+        c += 1
+print(c)
 
 
 
