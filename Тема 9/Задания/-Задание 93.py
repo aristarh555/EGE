@@ -6,7 +6,7 @@
 
 
 
-answer = 16
+answer = 6
 
 #
 
