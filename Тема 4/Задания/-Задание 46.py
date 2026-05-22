@@ -1,4 +1,4 @@
-answer = 0000
+answer = '001'
 
 
 from tests.conftest import result_register
