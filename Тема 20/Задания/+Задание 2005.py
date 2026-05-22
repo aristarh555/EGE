@@ -10,6 +10,7 @@ def game(heap, moves, to):
     return any(h) if (moves + 1) % 2 == to % 2 else all(h)
 print(min(s for s in range(16, 100000) if not game(s, 0, 1) and game(s, 0, 2)))
 print([s for s in range(16, 100000) if not game(s, 0, 1) and game(s, 0, 3)])
+print(min(s for s in range(16, 100000) if not game(s, 0, 2) and game(s, 0, 4)))
 
 
 
