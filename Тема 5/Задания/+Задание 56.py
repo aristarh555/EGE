@@ -29,14 +29,14 @@ def f(n):
     return r
 
 print(f(1987654321//8-1))
-'''
+
 start = 123456796
 c = 1
 while start <= 1987654318:
     start += 8
     c += 1
 print(c)
-'''
+
 
 
 answer = 233024691

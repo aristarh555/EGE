@@ -1,10 +1,11 @@
 # Решение
-k = 0
-for n in range(100000000,9999999999):
-    bn = bin(n)[2:]
-    n4 = bin(n % 4)[2:]
-    r = int(str(bn) + str(n4), 2)
-    print(r)
+def f(n):
+    b = bin(n)[2:]
+    b += bin(n % 4)[2:]
+    r = int(b, 2)
+    return r
+for i in range(1, 1000):
+    print(f(i), f(i)//i)
 
 
 
