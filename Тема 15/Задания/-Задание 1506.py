@@ -16,7 +16,7 @@ print(min_len)
 
 
 
-answer = 111061
+answer = 306696
 
 #
 
