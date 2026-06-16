@@ -21,11 +21,11 @@ def prost_divs(n):
 l = []
 for i in range(4555705, 1000000000):
     if i % 10 != 3:
-        x = i - (sum(prost_divs(i)) + len(prost_divs(i)))
+        x = i - (sum(prost_divs(i)) + 1 + len(prost_divs(i)))
         if x % 100 == 23:
-            if i == sum(prost_divs(i)) + len(prost_divs(i)) + x:
+            if i == sum(prost_divs(i)) + 1 + len(prost_divs(i)) + x:
                 l.append(i)
-                print(i, x)
+                print(i, x, prost_divs(i))
     if len(l) == 5:
         print(l)
         break
