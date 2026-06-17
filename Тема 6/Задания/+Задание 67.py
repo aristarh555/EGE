@@ -3,7 +3,7 @@ from turtle import *
 
 tracer(0)
 rt(90)
-k=30
+k=35
 for i in range(4):
     fd(4*(5**0.5)*k)
     rt(150)
@@ -13,7 +13,7 @@ pu()
 for x in range(-50, 100):
     for y in range(-50, 100):
         goto(x*k, y*k)
-        dot(3, 'red')
+        dot(2, 'red')
 exitonclick()
 
 
@@ -24,7 +24,7 @@ exitonclick()
 
 
 
-answer = 86
+answer = 99
 
 #
 
